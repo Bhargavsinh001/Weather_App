@@ -1,0 +1,214 @@
+:root {
+  --light-background: #f0f0f0;
+  --light-card-bg: #ffffff;
+  --light-text-color: #333333;
+  --light-button-bg: #ffcc00;
+  --light-button-text: #333333;
+  --dark-background: #121212;
+  --dark-card-bg: #1c1c1c;
+  --dark-text-color: #ffffff;
+  --dark-button-bg: #ffcc00;
+  --dark-button-text: #333333;
+  --error-color: #ff3333;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  background-color: var(--light-background);
+  color: var(--light-text-color);
+  transition: background-color 0.3s, color 0.3s;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.App.dark {
+  background-color: var(--dark-background);
+  color: var(--dark-text-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  font-size: 16px;
+  width: 250px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: var(--light-button-bg);
+  color: var(--light-button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #ffcc00;
+}
+
+.weather-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 350px;
+  transition: background-color 0.3s ease;
+}
+
+.weather-card.sunny {
+  background-image: url("./assets/clear_weather.avif");
+}
+
+.weather-card.rainy {
+  background-image: url("./assets/rain_weather.jpg");
+}
+
+.weather-card.cloudy {
+  background-image: url("./assets/cloudy_weather.jpg");
+}
+.weather-card.haze {
+  background-image: url("./assets/haze_weather.jpg");
+}
+
+.weather-card.mist {
+  background-image: url("./assets/mist_weather.jpeg");
+}
+.weather-card.smoke {
+  background-image: url("./assets/smoke_weather.webp");
+}
+
+.weather-card button {
+  padding: 8px 16px;
+  background-color: var(--light-button-bg);
+  color: var(--light-button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.weather-card.dark button {
+  background-color: var(--dark-button-bg);
+  color: var(--dark-button-text);
+}
+
+.favorites-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--light-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transition: background-color 0.3s ease;
+}
+
+.favorites-container.dark {
+  background-color: var(--dark-card-bg);
+}
+
+.favorites-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--light-text-color);
+}
+
+.favorites-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+  color: var(--light-text-color);
+  transition: background-color 0.2s ease;
+}
+
+.favorites-item:hover {
+  background-color: var(--light-button-bg);
+  cursor: pointer;
+}
+
+.favorites-item.dark:hover {
+  background-color: #4e4e4e;
+}
+
+.city-name {
+  flex-grow: 1;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--error-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: var(--light-button-bg);
+}
+
+.no-favorites {
+  font-style: italic;
+  text-align: center;
+  color: var(--light-text-color);
+}
+
+@media (max-width: 600px) {
+  .favorites-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .favorites-title {
+    font-size: 1.2rem;
+  }
+
+  .favorites-item {
+    font-size: 1rem;
+  }
+}
+.mode-toggle {
+  margin-bottom: 20px;
+}
+
+.mode-toggle button {
+  background-color: var(--light-button-bg);
+  color: var(--light-button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.error {
+  color: var(--error-color);
+}
